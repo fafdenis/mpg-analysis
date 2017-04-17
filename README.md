@@ -1,5 +1,5 @@
 # mpg-analysis
-Analysis estimating the differene in MPG between automatic and manual transmissions.
+Analysis estimating the difference in MPG between automatic and manual transmissions.
 
 ## Content:
 + `README.md`
