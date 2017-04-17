@@ -109,7 +109,7 @@ r_sq_best <- round(summary(bestmodel)$r.squared,2)
 adj_r_best <- round(summary(bestmodel)$adj.r.squared,2)
 ```
 
-# Multiple Linear Regression 
+# Multivariate Linear Regression 
 Next, we augment our baseline model with other aspects of design and performance. We use a multivariate linear model selected by the stepwise forward and backward model selection strategy with the $AIC$ as our criterion. The model selection criteria chose the model that includes `am`, `cyl`, `hp`, `wt`. It has the highest adjusted $R^2$, `r adj_r_best`, among all estimated models in the procedure and explains 84% of the variability found in the model. Moreover, we compared both models using analysis of variance and concluded that `cyl`, `hp`, `wt` are significant factors in explaining `mpg`. (See Appendix 1, Tables 2). 
 
 The intercept, `r b0_best`, is the expected mean MPG for automatic cars with a 4 cylinder engine when all other variables equal 0. The expected *increase* in the mean MPG for manual cars is `r b1_best`, holding everything else constant. It is smaller than the increase in our base model, `r b1`, and is no longer statistically significant at the 5% confidence level. Therefore, we fail to reject $H_0$ and conclude that the data do not provide convincing evidence of a difference in the mean MPG between manual and automatic cars.
@@ -131,6 +131,8 @@ tail(sort(influential[,6]), 3)
 # Conclusion
 We compared the MPG consumption between automatic cars and manual cars to determine which transmission type had better fuel efficiency. We find that on average manual cars consume `r b1` more miles per gallon than automatic cars, pointing to more fuel efficiency. However, when we expand our model to include other variables, such as cylinders, horse power and weight, we find that the average difference in MPG for manual cars drops to `r b1_best` and is no longer statistically significant. 
 
+
+Note: See Appendix II for R Markdown Codes. 
 
 \newpage
 
